@@ -2,9 +2,11 @@
 
 namespace Chromabits\Tests\Purifier;
 
-use Mockery as m;
+use Chromabits\Purifier\Contracts\Purifier;
 use Chromabits\Purifier\PurifierServiceProvider;
 use Chromabits\Tests\TestCase;
+use Closure;
+use Mockery as m;
 
 /**
  * Class PurifierServiceProviderTest
@@ -17,7 +19,10 @@ class PurifierServiceProviderTest extends TestCase
     {
         $mockApp = m::mock('Illuminate\Contracts\Foundation\Application');
 
-        $mockApp->shouldReceive('bind')->once();
+        $mockApp->shouldReceive('bind')->once(
+            m::type('string'),
+            m::type('closure')
+        );
 
         $provider = new PurifierServiceProvider($mockApp);
 
