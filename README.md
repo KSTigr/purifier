@@ -1,4 +1,4 @@
-# HTMLPurifier for Laravel 5
+# HTMLPurifier for Laravel 5 [![Build Status](https://travis-ci.org/eduard44/purifier.svg?branch=master)](https://travis-ci.org/eduard44/purifier)
 
 A HTMLPurifier service for Laravel 5
 
