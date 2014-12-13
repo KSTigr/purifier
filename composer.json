@@ -2,7 +2,7 @@
     "name": "chromabits/purifier",
     "description": "HTMLPurifier package for Laravel 5",
     "keywords": ["L5", "Laravel 5", "Laravel", "HTMLPurifier", "Purifier"],
-    "homepage": "http://github.com/eduard44/Purifier",
+    "homepage": "http://github.com/eduard44/purifier",
     "license": "LGPL",
     "authors": [
         {
@@ -17,7 +17,9 @@
     "require": {
         "php": ">=5.3.0",
         "laravel/framework": "5.*",
-        "ezyang/htmlpurifier": "4.6.*",
+        "ezyang/htmlpurifier": "4.6.*"
+    },
+    "require-dev": {
         "mockery/mockery": "dev-master"
     },
     "autoload": {

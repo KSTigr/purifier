@@ -14,7 +14,7 @@ This package can be installed via [Composer](http://getcomposer.org) by requirin
 {
     "require": {
         "laravel/framework": "5.0.*",
-        "eduard44/purifier": "dev-master"
+        "chromabits/purifier": "dev-master"
     },
     "minimum-stability": "dev"
 }
