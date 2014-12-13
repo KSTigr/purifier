@@ -236,7 +236,7 @@ class Purifier implements PurifierContract
      * @return array|string
      * @throws Exception
      */
-    public function clean($dirty, $config = null)
+    public function clean($dirty, $config = 'default')
     {
         $self = $this;
 

@@ -16,12 +16,14 @@
     ],
     "require": {
         "php": ">=5.3.0",
-        "illuminate/support": "5.*",
-        "ezyang/htmlpurifier": "4.6.*"
+        "laravel/framework": "5.*",
+        "ezyang/htmlpurifier": "4.6.*",
+        "mockery/mockery": "dev-master"
     },
     "autoload": {
-        "psr-0": {
-            "Chromabits\\Purifier": "src/Chromabits/Purifier"
+        "psr-4": {
+            "Chromabits\\Purifier\\": "src/Chromabits/Purifier/",
+            "Chromabits\\Tests\\": "tests/"
         }
     },
     "minimum-stability": "dev"
