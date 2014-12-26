@@ -69,7 +69,7 @@ Full usage example with default settings within a Laravel 5 controller:
 
 namespace Http\Controllers;
 
-use Chromabits\Purifier\Constracts\Purifier;
+use Chromabits\Purifier\Contracts\Purifier;
 use HTMLPurifier_Config;
 use Illuminate\Http\Request;
 
