@@ -2,7 +2,7 @@
     "name": "chromabits/purifier",
     "description": "HTMLPurifier package for Laravel 5",
     "keywords": ["L5", "Laravel 5", "Laravel", "HTMLPurifier", "Purifier"],
-    "homepage": "http://github.com/eduard44/purifier",
+    "homepage": "http://github.com/etcinit/purifier",
     "license": "LGPL",
     "authors": [
         {

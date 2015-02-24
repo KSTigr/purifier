@@ -1,3 +1,7 @@
-Copyright (c) 2013 Muharrem ERİN (me@mewebstudio.com)
+Copyright &copy; 2013 Muharrem ERİN (me@mewebstudio.com)
 
-http://www.gnu.org/licenses/lgpl-2.1.html GNU Lesser General Public License, version 2.1
+GNU Lesser General Public License, version 2.1
+http://www.gnu.org/licenses/lgpl-2.1.html
+
+Newer Laravel 5 portions:
+Copyright &copy; 2015 Eduardo Trujillo <ed@chromabits.com>
