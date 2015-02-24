@@ -1,4 +1,4 @@
-# HTMLPurifier for Laravel 5 [![Build Status](https://travis-ci.org/etcinit/purifier.svg?branch=master)](https://travis-ci.org/etcinit/purifier)
+# [Purifier](https://github.com/etcinit/purifier) [![Build Status](https://travis-ci.org/etcinit/purifier.svg?branch=master)](https://travis-ci.org/etcinit/purifier)
 
 A HTMLPurifier service for Laravel 5
 
