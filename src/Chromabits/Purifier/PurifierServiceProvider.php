@@ -29,7 +29,12 @@ class PurifierServiceProvider extends ServiceProvider
         // Bind contract with concrete implementation
         $this->app->bind(
             'Chromabits\Purifier\Contracts\Purifier',
-            'Chromabits\Purifier\Purifier'
+            function ($app) {
+                return new Purifier(
+                    $app['Illuminate\Contracts\Foundation\Application'],
+                    $app['Illuminate\Contracts\Config\Repository']
+                );
+            }
         );
     }
 }
