@@ -8,7 +8,7 @@ Based on the [Laravel 4 Purifier service]((https://github.com/mewebstudio/purifi
 
 > Note: This package is for Laravel 5 only. It does not include a Facade and it requires certain "Contracts" interfaces only available in Laravel 5. 
 
-This package can be installed via [Composer](http://getcomposer.org) by requiring the `eduard44/purifier` package and setting the `minimum-stability` to `dev` in your project's `composer.json`.
+This package can be installed via [Composer](http://getcomposer.org) by requiring the `chromabits/purifier` package and setting the `minimum-stability` to `dev` in your project's `composer.json`.
 
 ```json
 {
@@ -69,7 +69,7 @@ Full usage example with default settings within a Laravel 5 controller:
 
 namespace Http\Controllers;
 
-use Chromabits\Purifier\Constracts\Purifier;
+use Chromabits\Purifier\Contracts\Purifier;
 use HTMLPurifier_Config;
 use Illuminate\Http\Request;
 
