@@ -13,6 +13,7 @@ use Illuminate\Support\ServiceProvider;
  * configuration
  *
  * Copyright (c) 2014 Eduardo Trujillo
+ *
  * @author Eduardo Trujillo <ed@chromabits.com>
  * @package Chromabits\Purifier
  */
@@ -27,12 +28,8 @@ class PurifierServiceProvider extends ServiceProvider
     {
         // Bind contract with concrete implementation
         $this->app->bind(
-                'Chromabits\Purifier\Contracts\Purifier',
-                function ($app) {
-                    return new Purifier($app, $app->make(
-                        'Illuminate\Contracts\Config\Repository'
-                    ));
-                }
-            );
+            'Chromabits\Purifier\Contracts\Purifier',
+            'Chromabits\Purifier\Purifier'
+        );
     }
 }

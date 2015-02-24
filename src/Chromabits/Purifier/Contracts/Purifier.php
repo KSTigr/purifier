@@ -17,6 +17,7 @@ interface Purifier
      *
      * @param array|string $dirty HTML to clean
      * @param array|string $config
+     *
      * @return array|string
      * @throws \Exception
      */

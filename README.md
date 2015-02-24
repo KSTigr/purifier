@@ -4,17 +4,18 @@ A HTMLPurifier service for Laravel 5
 
 ## Installation
 
-> Note: This package is for Laravel 5 only. It does not include a Facade and it requires certain "Contracts" interfaces only available in Laravel 5. 
+> Note: This package is for Laravel 5 only. It does not include a Facade and 
+> it requires certain "Contracts" interfaces only available in Laravel 5. 
 
-This package can be installed via [Composer](http://getcomposer.org) by requiring the `chromabits/purifier` package and setting the `minimum-stability` to `dev` in your project's `composer.json`.
+This package can be installed via [Composer](http://getcomposer.org) by 
+requiring the `chromabits/purifier` package in your project's `composer.json`:
 
 ```json
 {
     "require": {
-        "laravel/framework": "5.0.*",
-        "chromabits/purifier": "dev-master"
-    },
-    "minimum-stability": "dev"
+        "laravel/framework": "~5.0",
+        "chromabits/purifier": "~2.0"
+    }
 }
 ```
 
@@ -22,9 +23,11 @@ Update your packages with `composer update` or install with `composer install`.
 
 ## Usage
 
-To use the HTMLPurifier service, you must register the service provider when bootstrapping your Laravel application.
+To use the HTMLPurifier service, you must register the service provider when 
+bootstrapping your Laravel application.
 
-Find the `providers` key in `config/app.php` and register the HTMLPurifier Service Provider:
+Find the `providers` key in `config/app.php` and register the HTMLPurifier 
+Service Provider:
 
 ```php
     'providers' => [
@@ -33,13 +36,17 @@ Find the `providers` key in `config/app.php` and register the HTMLPurifier Servi
     ]
 ```
 
-After registering the provider, classes requiring the `Chromabits\Purifier\Contracts\Purifier` contract will get the purifier service instance through dependency injection (See below for examples).
+After registering the provider, classes requiring the 
+`Chromabits\Purifier\Contracts\Purifier` contract will get the purifier service 
+instance through dependency injection (See below for examples).
 
 ## Configuration
 
-To use your own settings, copy the `config/purifier.php` file in this package into your application's `config` directory, and modify as needed.
+To use your own settings, copy the `config/purifier.php` file in this package 
+into your application's `config` directory, and modify as needed.
 
-You can define mutiple sets of configurations by sspecifying new entries in the `settings` array key:
+You can define mutiple sets of configurations by sspecifying new entries in the 
+`settings` array key:
 
 ```php
 return [
@@ -56,7 +63,9 @@ return [
 ];
 ```
 
-The service will use the `default` key as the default set of configuration, any other configuration will extend this. If a configuraiton file is not provided, the service will use safe defaults.
+The service will use the `default` key as the default set of configuration, 
+any other configuration will extend this. If a configuraiton file is not 
+provided, the service will use safe defaults.
 
 ## Example
 
@@ -117,7 +126,8 @@ With dynamic configuration:
 	);
 ```
 
-Interacting with the `HTMLPurifier_Config` object directly using a custom service provider and Closure:
+Interacting with the `HTMLPurifier_Config` object directly using a custom 
+service provider and Closure:
 
 ```php
 <?php
@@ -155,6 +165,7 @@ class CustomPurifierServiceProvider extends ServiceProvider
 
 # License
 
-Based on the [Laravel 4 Purifier service]((https://github.com/mewebstudio/purifier)) 
+Based on the 
+[Laravel 4 Purifier service]((https://github.com/mewebstudio/purifier)) 
 
 See **LICENSE.md** for license information

@@ -20,7 +20,8 @@
         "ezyang/htmlpurifier": "4.6.*"
     },
     "require-dev": {
-        "mockery/mockery": "dev-master"
+        "mockery/mockery": "dev-master",
+        "phpunit/phpunit": "~4.5"
     },
     "autoload": {
         "psr-4": {
