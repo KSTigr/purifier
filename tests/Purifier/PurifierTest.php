@@ -12,6 +12,7 @@ use Mockery as m;
 /**
  * Class PurifierTest
  *
+ * @author Eduardo Trujillo <ed@chromabits.com>
  * @package Chromabits\Tests\Purifier
  */
 class PurifierTest extends TestCase
@@ -67,8 +68,12 @@ class PurifierTest extends TestCase
                 'settings' => [
                     'default' => [
                         'HTML.Doctype' => 'XHTML 1.0 Strict',
-                        'HTML.Allowed' => 'div,b,strong,i,em,a[href|title],ul,ol,li,p[style],br,span[style],img[width|height|alt|src]',
-                        'CSS.AllowedProperties' => 'font,font-size,font-weight,font-style,font-family,text-decoration,padding-left,color,background-color,text-align',
+                        'HTML.Allowed' => 'div,b,strong,i,em,a[href|title],ul'
+                            . ',ol,li,p[style],br,span[style]'
+                            . ',img[width|height|alt|src]',
+                        'CSS.AllowedProperties' => 'font,font-size,font-weight'
+                            . ',font-style,font-family,text-decoration'
+                            . ',padding-left,color,background-color,text-align',
                         'AutoFormat.AutoParagraph' => false,
                         'AutoFormat.RemoveEmpty' => true,
                     ]
@@ -89,7 +94,8 @@ class PurifierTest extends TestCase
             'purifier' => [
                 'settings' => [
                     'myconfig' => [
-                        'HTML.Allowed' => 'div,b,strong,i,em,a[href|title],ul,ol,li,p[style],br,span[style]',
+                        'HTML.Allowed' => 'div,b,strong,i,em,a[href|title],ul'
+                            . ',ol,li,p[style],br,span[style]',
                         'AutoFormat.AutoParagraph' => false,
                     ]
                 ]
@@ -98,7 +104,10 @@ class PurifierTest extends TestCase
 
         $purifier = new Purifier($this->app, $config);
 
-        $result = $purifier->clean('<script></script>Some string<img />', 'myconfig');
+        $result = $purifier->clean(
+            '<script></script>Some string<img />',
+            'myconfig'
+        );
 
         $this->assertEquals('Some string', $result);
     }
@@ -110,7 +119,8 @@ class PurifierTest extends TestCase
         $purifier = new Purifier($this->app, $config);
 
         $result = $purifier->clean('<script></script>Some string<img />', [
-            'HTML.Allowed' => 'div,b,strong,i,em,a[href|title],ul,ol,li,p[style],br,span[style]',
+            'HTML.Allowed' => 'div,b,strong,i,em,a[href|title],ul,ol,li'
+                . ',p[style],br,span[style]',
             'AutoFormat.AutoParagraph' => false,
         ]);
 
@@ -121,17 +131,24 @@ class PurifierTest extends TestCase
     {
         $config = new Repository([]);
 
-        $purifier = new Purifier($this->app, $config, function (HTMLPurifier_Config $config) {
-            $config->loadArray([
-                'HTML.Doctype' => 'XHTML 1.0 Strict',
-                'HTML.Allowed' => 'div,b,strong,i,em,a[href|title],ul,ol,li,p[style],br,span[style]',
-                'CSS.AllowedProperties' => 'font,font-size,font-weight,font-style,font-family,text-decoration,padding-left,color,background-color,text-align',
-                'AutoFormat.AutoParagraph' => false,
-                'AutoFormat.RemoveEmpty' => true,
-            ]);
+        $purifier = new Purifier(
+            $this->app,
+            $config,
+            function (HTMLPurifier_Config $config) {
+                $config->loadArray([
+                    'HTML.Doctype' => 'XHTML 1.0 Strict',
+                    'HTML.Allowed' => 'div,b,strong,i,em,a[href|title],ul,ol,li'
+                        . ',p[style],br,span[style]',
+                    'CSS.AllowedProperties' => 'font,font-size,font-weight'
+                        . ',font-style,font-family,text-decoration,padding-left'
+                        . ',color,background-color,text-align',
+                    'AutoFormat.AutoParagraph' => false,
+                    'AutoFormat.RemoveEmpty' => true,
+                ]);
 
-            return $config;
-        });
+                return $config;
+            }
+        );
 
         $result = $purifier->clean('<script></script>Some string<img />');
 
@@ -147,7 +164,8 @@ class PurifierTest extends TestCase
             'purifier' => [
                 'settings' => [
                     'myconfig' => [
-                        'HTML.Allowed' => 'div,b,strong,i,em,a[href|title],ul,ol,li,p[style],br,span[style]',
+                        'HTML.Allowed' => 'div,b,strong,i,em,a[href|title]'
+                            . ',ul,ol,li,p[style],br,span[style]',
                         'AutoFormat.AutoParagraph' => false,
                     ]
                 ]
@@ -156,7 +174,10 @@ class PurifierTest extends TestCase
 
         $purifier = new Purifier($this->app, $config);
 
-        $result = $purifier->clean('<script></script>Some string<img />', 'myconfig2');
+        $result = $purifier->clean(
+            '<script></script>Some string<img />',
+            'myconfig2'
+        );
 
         $this->assertEquals('Some string', $result);
     }

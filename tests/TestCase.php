@@ -8,6 +8,7 @@ use Mockery;
 /**
  * Class TestCase
  *
+ * @author Eduardo Trujillo <ed@chromabits.com>
  * @package Chromabits\Tests
  */
 class TestCase extends BaseTestCase

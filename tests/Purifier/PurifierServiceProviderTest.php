@@ -11,6 +11,7 @@ use Mockery as m;
 /**
  * Class PurifierServiceProviderTest
  *
+ * @author Eduardo Trujillo <ed@chromabits.com>
  * @package Chromabits\Tests\Purifier
  */
 class PurifierServiceProviderTest extends TestCase
