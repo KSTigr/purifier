@@ -1,8 +1,6 @@
-# HTMLPurifier for Laravel 5 [![Build Status](https://travis-ci.org/eduard44/purifier.svg?branch=master)](https://travis-ci.org/eduard44/purifier)
+# HTMLPurifier for Laravel 5 [![Build Status](https://travis-ci.org/etcinit/purifier.svg?branch=master)](https://travis-ci.org/etcinit/purifier)
 
 A HTMLPurifier service for Laravel 5
-
-Based on the [Laravel 4 Purifier service]((https://github.com/mewebstudio/purifier)) 
 
 ## Installation
 
@@ -154,3 +152,9 @@ class CustomPurifierServiceProvider extends ServiceProvider
     }
 }
 ```
+
+# License
+
+Based on the [Laravel 4 Purifier service]((https://github.com/mewebstudio/purifier)) 
+
+See **LICENSE.md** for license information
