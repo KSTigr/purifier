@@ -14,7 +14,7 @@ requiring the `chromabits/purifier` package in your project's `composer.json`:
 {
     "require": {
         "laravel/framework": "~5.0",
-        "chromabits/purifier": "~2.0"
+        "chromabits/purifier": "~2.1"
     }
 }
 ```
