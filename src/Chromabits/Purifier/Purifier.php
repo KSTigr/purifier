@@ -41,10 +41,10 @@ use Illuminate\Contracts\Foundation\Application;
  */
 class Purifier implements PurifierContract
 {
-    const LIBRARY_PATH = 'vendor/ezyang/htmlpurifier/library/';
+    public static $libraryPath = 'vendor/ezyang/htmlpurifier/library/';
 
-    const PRELOAD_FILE = 'HTMLPurifier.includes.php';
-    const AUTOLOAD_FILE = 'HTMLPurifier.auto.php';
+    public static $preloadFile = 'HTMLPurifier.includes.php';
+    public static $autloadFile = 'HTMLPurifier.auto.php';
 
     /**
      * Implementation of the Laravel application
@@ -180,11 +180,11 @@ class Purifier implements PurifierContract
         if (!class_exists('HTMLPurifier_Config', false)) {
             // Optionally preload the purifier libraries
             if ($this->config->get('purifier.preload', false)) {
-                require $this->getLibraryPath(self::PRELOAD_FILE);
+                require $this->getLibraryPath(self::$preloadFile);
             }
 
             // Load the autoloader
-            require $this->getLibraryPath(self::AUTOLOAD_FILE);
+            require $this->getLibraryPath(self::$autloadFile);
         }
     }
 
@@ -199,7 +199,7 @@ class Purifier implements PurifierContract
     {
         $basePath = $this->app['path.base'];
 
-        $libraryPath = $basePath . '/' . self::LIBRARY_PATH
+        $libraryPath = $basePath . '/' . self::$libraryPath
             . ($path ? '/' . $path : $path);
 
         return $libraryPath;
